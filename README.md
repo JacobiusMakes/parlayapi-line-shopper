@@ -78,7 +78,7 @@ Milwaukee Bucks @ Denver Nuggets  [NBA]  (2026-08-26 05:02 UTC)
     shopping saves 10.8 cents of hold per dollar vs the average book (17.6 vs the worst)
 
 Across 3 game(s): shopping the best line saves an average of 13.3 cents of hold per dollar staked.
-These are synthetic sandbox odds. Run with PARLAY_API_KEY set for live lines from 45+ books and sources.
+These are synthetic sandbox odds. Run with PARLAY_API_KEY set for live lines from 30+ books and sources.
 ```
 
 Sandbox odds are randomly generated, so the gaps between books (and the negative holds) are wilder than live markets. On live data expect holds of a few percent and savings of a few cents per dollar, which is exactly the edge line shopping is supposed to find.
@@ -93,7 +93,7 @@ uv run line_shopper.py nfl --markets h2h,spreads,totals
 uv run line_shopper.py "Lakers"
 ```
 
-Live mode pulls current lines from ParlayAPI's 45+ sportsbooks and sources across 90+ sports. Paid tiers and limits: [parlay-api.com/pricing](https://parlay-api.com/pricing).
+Live mode pulls current lines from ParlayAPI's 30+ sportsbooks and sources across 90+ sports. Paid tiers and limits: [parlay-api.com/pricing](https://parlay-api.com/pricing).
 
 ## Usage
 
