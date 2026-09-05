@@ -131,3 +131,7 @@ This is a one-command line shopper, not a betting framework. No polling loops, n
 ## License and affiliation
 
 MIT. Built by the [ParlayAPI](https://parlay-api.com) team. ParlayAPI is a real-time sports odds API and a drop-in replacement for the-odds-api, with a free tier (1,000 credits per month, no card required).
+
+---
+
+Part of the [ParlayAPI](https://parlay-api.com) ecosystem: a real-time sports odds API with a free tier of 1,000 credits per month, no card required. Explore all the tools at [github.com/JacobiusMakes](https://github.com/JacobiusMakes).
