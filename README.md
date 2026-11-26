@@ -99,6 +99,11 @@ free [workload planner](https://parlay-api.com/tools/api-workload?utm_source=git
 It needs no account or key and makes no API requests. Leave credit cost unknown
 until you verify the cost of your exact request shape.
 
+For several request shapes with different or unknown unit costs, use the
+[offline request-budget kit](https://github.com/JacobiusMakes/parlayapi-notebooks/tree/main/labs/request-budget).
+It includes a CSV template, exact JSON export and a self-contained notebook
+for Python 3.9 or later. Unpriced work keeps the total credit estimate unknown.
+
 ## Account requests
 
 Create your own [account](https://parlay-api.com/signup?utm_source=github&utm_medium=tool_readme&utm_campaign=line-shopper), keep its key private, and explicitly select the request you want:
