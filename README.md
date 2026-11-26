@@ -1,14 +1,23 @@
 # parlayapi-line-shopper
 
-One command that shows you every sportsbook's price on the same bet, flags the best and the worst, and tells you how many cents of hold you save by shopping the line.
+A Python command-line example for comparing prices in the sportsbook records
+returned to your request. It marks relative best and worst prices and displays
+hold arithmetic for those inputs. It does not establish that every book or
+required selection is present.
 
-One file, zero dependencies, Python 3.9+. Works with no API key out of the box (sandbox mode). Built by the ParlayAPI team.
+The script uses Python 3.9+ and the standard library. With no configured key it
+selects the sandbox request path; with your own key it can select account
+requests. Verify current endpoint access and scope in the documentation before
+a private evaluation.
 
-## Why line shopping matters
+## Read a comparison against its scope
 
-Sportsbooks price the same bet differently. If one book has your team at -110 and another has it at +100, taking the better number is free money over time: same bet, better payout. The book's margin on a market is called the hold. A 4.5% hold means the book keeps about 4.5 cents of every dollar wagered on that market. Shopping the best price per outcome across books shrinks the hold you actually pay, often by several cents per dollar. This tool measures exactly that, per game, in real time.
+Check event identity, period, outcome and signed line before comparing prices.
+Missing selections, different settlement rules and unknown observation times
+remain separate problems. A numerical price difference does not establish an
+executable trade, realized savings or profit.
 
-## Quickstart (no signup, nothing to install)
+## Existing command-line quickstart
 
 ```bash
 git clone https://github.com/JacobiusMakes/parlayapi-line-shopper.git
@@ -22,7 +31,7 @@ No [uv](https://docs.astral.sh/uv/)? Plain Python works too, there are zero depe
 python3 line_shopper.py nba
 ```
 
-With no API key it uses the free ParlayAPI sandbox (synthetic odds, no key, no signup). Here is a real captured sandbox run:
+The following retained sandbox transcript contains invented prices. It is not current source data or a current endpoint-availability check:
 
 ```text
 $ uv run line_shopper.py nba
@@ -81,11 +90,18 @@ Across 3 game(s): shopping the best line saves an average of 13.3 cents of hold 
 These are synthetic sandbox odds. Run with PARLAY_API_KEY set for live lines from 30+ books and sources.
 ```
 
-Sandbox odds are randomly generated, so the gaps between books (and the negative holds) are wilder than live markets. On live data expect holds of a few percent and savings of a few cents per dollar, which is exactly the edge line shopping is supposed to find.
+These retained teaching outputs do not establish normal market margins, available payouts or savings for a private live evaluation.
 
-## Live odds
+## Plan a private evaluation
 
-Grab a free key at [parlay-api.com/signup](https://parlay-api.com/signup) (free tier: 1,000 credits per month, no card) and:
+Record your polling window, interval, endpoints, pages and active days in the
+free [workload planner](https://parlay-api.com/tools/api-workload?utm_source=github&utm_medium=tool_readme&utm_campaign=line-shopper).
+It needs no account or key and makes no API requests. Leave credit cost unknown
+until you verify the cost of your exact request shape.
+
+## Account requests
+
+Create your own [account](https://parlay-api.com/signup?utm_source=github&utm_medium=tool_readme&utm_campaign=line-shopper), keep its key private, and explicitly select the request you want:
 
 ```bash
 export PARLAY_API_KEY=your_key
@@ -93,7 +109,7 @@ uv run line_shopper.py nfl --markets h2h,spreads,totals
 uv run line_shopper.py "Lakers"
 ```
 
-Live mode pulls current lines from ParlayAPI's 30+ sportsbooks and sources across 90+ sports. Paid tiers and limits: [parlay-api.com/pricing](https://parlay-api.com/pricing).
+Account requests use your own entitlement and allowance. Verify exact returned sport, bookmaker, market and timestamp fields. Current terms, allowances and request-cost rules are in the [documentation](https://parlay-api.com/docs) and [pricing](https://parlay-api.com/pricing).
 
 ## Usage
 
@@ -130,8 +146,8 @@ This is a one-command line shopper, not a betting framework. No polling loops, n
 
 ## License and affiliation
 
-MIT. Built by the [ParlayAPI](https://parlay-api.com) team. ParlayAPI is a real-time sports odds API and a drop-in replacement for the-odds-api, with a free tier (1,000 credits per month, no card required).
+MIT-licensed code, built by the [ParlayAPI](https://parlay-api.com) team. Sharing this code does not grant permission to redistribute API data. Verify the applicable data-use terms for your private project.
 
 ---
 
-Part of the [ParlayAPI](https://parlay-api.com) ecosystem: a real-time sports odds API with a free tier of 1,000 credits per month, no card required. Explore all the tools at [github.com/JacobiusMakes](https://github.com/JacobiusMakes).
+Explore the related source projects at [github.com/JacobiusMakes](https://github.com/JacobiusMakes).
